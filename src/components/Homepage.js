@@ -167,7 +167,7 @@ class Home extends Component {
                           <div className="suggestion-usd">
                             <img src="./images/s2.png" alt="" />
                             <div className="sgt-text">
-                              <h4>Saroj Shakya</h4>
+                              <h4>Sairoj Prasai</h4>
                               <span>PHP Developer</span>
                             </div>
                             <span><i className="la la-plus"></i></span>
@@ -199,7 +199,7 @@ class Home extends Component {
                           <div className="suggestion-usd">
                             <img src="./images/s6.png" alt="" />
                             <div className="sgt-text">
-                              <h4>Saroj Shakya</h4>
+                              <h4>Sairoj Prasai</h4>
                               <span>PHP Developer</span>
                             </div>
                             <span><i className="la la-plus"></i></span>
@@ -347,7 +347,7 @@ class Home extends Component {
               <div className="con-title mg-3">
                 <div className="chat-user-info">
                   <img src="./images/us-img1.png" alt="" />
-                  <h3>Saroj Shakya <span className="status-info"></span></h3>
+                  <h3>Sairoj Prasai <span className="status-info"></span></h3>
                 </div>
                 <div className="st-icons">
                   <a href="./index.html#" title=""><i className="la la-cog"></i></a>
@@ -461,7 +461,7 @@ class Home extends Component {
               <div className="con-title mg-3">
                 <div className="chat-user-info">
                   <img src="./images/us-img1.png" alt="" />
-                  <h3>Saroj Shakya <span className="status-info"></span></h3>
+                  <h3>Sairoj Prasai <span className="status-info"></span></h3>
                 </div>
                 <div className="st-icons">
                   <a href="./index.html#" title=""><i className="la la-cog"></i></a>
@@ -586,7 +586,7 @@ class Home extends Component {
                     <span className="active-status activee"></span>
                   </div>
                   <div className="usy-info">
-                    <h3>Saroj Shakya</h3>
+                    <h3>Sairoj Prasai</h3>
                     <span
                       >Lorem ipsum dolor <img src="./images/smley.png" alt=""
                     /></span>
@@ -601,7 +601,7 @@ class Home extends Component {
                     <img src="./images/usy2.png" alt="" />
                   </div>
                   <div className="usy-info">
-                    <h3>Saroj Shakya</h3>
+                    <h3>Sairoj Prasai</h3>
                     <span
                       >Lorem ipsum dolor <img src="./images/smley.png" alt=""
                     /></span>
@@ -615,7 +615,7 @@ class Home extends Component {
                     <img src="./images/usy3.png" alt="" />
                   </div>
                   <div className="usy-info">
-                    <h3>Saroj Shakya</h3>
+                    <h3>Sairoj Prasai</h3>
                     <span
                       >Lorem ipsum dolor <img src="./images/smley.png" alt=""
                     /></span>
