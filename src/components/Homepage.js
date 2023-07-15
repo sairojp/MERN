@@ -22,18 +22,18 @@ const userData = {
 class Home extends Component {
     render() {
         return <div className="wrapper">
-        <Header/>
+        <Header user={userData}/>
         <main>
           <div className="main-section">
             <div className="container">
               <div className="main-section-data">
                 <div className="row">
                   <div className="col-lg-3 col-md-4 pd-left-none no-pd">
-                    <UserProfile/>
+                    <UserProfile user={userData}/>
                   </div>
                   <div className="col-lg-6 col-md-8 no-pd">
                     <div className="main-ws-sec">
-                      <Postbar/>
+                      <Postbar user={userData}/>
                       <PostSection/>
                     </div>
                   </div>
