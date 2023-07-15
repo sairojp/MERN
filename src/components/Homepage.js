@@ -5,6 +5,20 @@ import Postbar from "./Postbar";
 import PostSection from "./PostSection";
 import TagSection from "./TagSection";
 
+const userData = {
+  email:"test@test.com",
+  username:"sairoj",
+  fullname:"Sairoj Prasai",
+  title : "Software Developer",
+  skills: ["J5","PHP","JAVA"],
+  address : "Kathmandu,Nepal",
+  job_type: "Full Time", 
+  id: 1,
+  is_active: true,
+  followers:["username123","user234","user543"],
+  followings:["username123","user234","user543","user555"],
+};
+
 class Home extends Component {
     render() {
         return <div className="wrapper">

@@ -1,4 +1,17 @@
 import { Component } from "react";
+const userData = {
+  email:"test@test.com",
+  username:"sairoj",
+  fullname:"Sairoj Prasai",
+  title : "Software Developer",
+  skills: ["J5","PHP","JAVA"],
+  address : "Kathmandu,Nepal",
+  job_type: "Full Time", 
+  id: 1,
+  is_active: true,
+  followers:["username123","user234","user543"],
+  followings:["username123","user234","user543","user555"],
+};
 class UserProfile extends Component{
   render()
   {
@@ -7,22 +20,22 @@ class UserProfile extends Component{
       <div className="user-profile">
         <div className="username-dt">
           <div className="usr-pic">
-            <img src="./images/sairoj-pic.jpg" alt="" />
+            <img src={"./images/" + userData.username +".jpg"} alt="" />
           </div>
         </div>
         <div className="user-specs">
-          <h3>Sairoj Prasai</h3>
-          <span>Research Head</span>
+          <h3>{userData.fullname}</h3>
+          <span>{userData.title}</span>
         </div>
       </div>
       <ul className="user-fw-status">
         <li>
           <h4>Following</h4>
-          <span>34</span>
+          <span>{userData.followings.length}</span>
         </li>
         <li>
           <h4>Followers</h4>
-          <span>155</span>
+          <span>{userData.followers.length}</span>
         </li>
         <li>
           <a href="./my-profile.html" title="">View Profile</a>
