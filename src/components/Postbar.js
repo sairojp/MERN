@@ -5,7 +5,7 @@ class Postbar extends Component{
     const {user} = this.props;
     return <div className="post-topbar">
     <div className="user-picy">
-    <img src={"./images/" + user.username +".jpg"} alt="" />
+    <img src={"./images/" + user?.username +".jpg"} alt="" />
     </div>
     <div className="post-st">
       <ul>

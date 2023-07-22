@@ -5,35 +5,44 @@ import Postbar from "./Postbar";
 import PostSection from "./PostSection";
 import TagSection from "./TagSection";
 
-const userData = {
-  email:"test@test.com",
-  username:"sairoj",
-  fullname:"Sairoj Prasai",
-  title : "Software Developer",
-  skills: ["J5","PHP","JAVA"],
-  address : "Kathmandu,Nepal",
-  job_type: "Full Time", 
-  id: 1,
-  is_active: true,
-  followers:["username123","user234","user543"],
-  followings:["username123","user234","user543","user555"],
-};
 
 class Home extends Component {
+  constructor() {
+    super();
+    this.state = {
+      user : {},
+    };
+  }
+  componentDidMount() {
+    const that = this;
+    fetch("http://localhost:5000/api/v1/user")
+      .then((resp) => resp.json())
+      .then((data) => {
+        that.setState({user: data });
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
     render() {
+      const user = {...this.state.user};
+      // if (!!Object.keys(user).length) {
+      //   return <></>;
+      // }
+      {console.log(user)}
         return <div className="wrapper">
-        <Header user={userData}/>
+        <Header user={user}/>
         <main>
           <div className="main-section">
             <div className="container">
               <div className="main-section-data">
                 <div className="row">
                   <div className="col-lg-3 col-md-4 pd-left-none no-pd">
-                    <UserProfile user={userData}/>
+                    <UserProfile user={user}/>
                   </div>
                   <div className="col-lg-6 col-md-8 no-pd">
                     <div className="main-ws-sec">
-                      <Postbar user={userData}/>
+                      <Postbar user={user}/>
                       <PostSection/>
                     </div>
                   </div>
