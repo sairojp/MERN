@@ -105,8 +105,8 @@ class PostSection extends Component {
               </p>
               <ul className="skill-tags">
                 {post.skills.map((skills, idx2) => (
-                  <li>
-                    <a key={idx2} href="./index.html#" title="">
+                  <li key={idx2}>
+                    <a href="./index.html#" title="">
                       {skills}
                     </a>
                   </li>
