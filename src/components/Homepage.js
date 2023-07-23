@@ -26,9 +26,9 @@ class Home extends Component {
   }
     render() {
       const user = {...this.state.user};
-      // if (!!Object.keys(user).length) {
-      //   return <></>;
-      // }
+       if (!Object.keys(user).length) {
+         return <div></div>;
+       }
       {console.log(user)}
         return <div className="wrapper">
         <Header user={user}/>
