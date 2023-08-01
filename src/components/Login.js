@@ -1,6 +1,20 @@
 import { Component } from "react";
 
 class Login extends Component {
+  handleSignUpClick(){
+    fetch("http://localhost:5000/api/v1/user",{
+      method : "POST",
+      headers: {
+        "Content-Type" : "application/json"
+      },})
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
   render() {
     return (
       <div className="sign-in-page" style={{ background: "cornflowerblue" }}>
