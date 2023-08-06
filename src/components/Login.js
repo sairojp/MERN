@@ -1,6 +1,43 @@
 import { Component } from "react";
 
 class Login extends Component {
+  handleSigninClick(evnt){
+    const formElem = document.getElementById("login-form");
+
+    // get value from input field
+    const username = formElem.querySelector("#username").value;
+    const password = formElem.querySelector("#password").value;
+
+    if(!username || !password) {
+      document.querySelector("#err").innerHTML = "Username or password not entered";
+      return;
+    }
+    // clear any error message
+    document.querySelector("#err").innerHTML = "";
+
+    fetch("http://localhost:5000/api/v1/login",{
+      method : "POST",
+      headers: {
+        "Content-Type" : "application/json"
+      },
+      body:JSON.stringify({
+        username,password
+      })
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log(data);
+        if(data.error){
+          document.querySelector("#err").innerHTML = data.error;
+        }
+        
+      })
+      .catch((err) => {
+        document.querySelector("#err").innerHTML = err.message;
+        console.error(err);
+      });
+  }
+
   handleSignUpClick(evnt){
     const formElem = document.getElementById("signup-form");
     const username = formElem.querySelector("#signin-username").value;
@@ -14,8 +51,11 @@ class Login extends Component {
     const rpassword = formElem.querySelector("#repeat-password").value;
 
     if (password !== rpassword){
+      alert("Password doesnot match");
       return;
     }
+    // clear any error message
+    document.querySelector("#err").innerHTML = "";
 
     fetch("http://localhost:5000/api/v1/user",{
       method : "POST",
@@ -29,10 +69,16 @@ class Login extends Component {
       .then((resp) => resp.json())
       .then((data) => {
         console.log(data);
+        if(data.error){
+          document.querySelector("#err").innerHTML = data.error;
+        }
+        
       })
       .catch((err) => {
+        document.querySelector("#err").innerHTML = err.message;
         console.error(err);
       });
+    
   }
   render() {
     return (
@@ -109,7 +155,8 @@ class Login extends Component {
                           </div>
                         </div>
                         <div className="col-lg-12">
-                          <button type="submit" value="submit">
+                          <button type="button" value="submit" 
+                          onClick = {this.handleSigninClick}>
                             Sign in
                           </button>
                         </div>
