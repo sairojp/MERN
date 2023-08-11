@@ -7,30 +7,29 @@ import TagSection from "./TagSection";
 
 
 class Home extends Component {
-  constructor() {
-    super();
-    this.state = {
-      user : {},
-    };
-  }
-  componentDidMount() {
-    const that = this;
-    fetch("http://localhost:5000/api/v1/user")
-      .then((resp) => resp.json())
-      .then((data) => {
-        that.setState({user: data });
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     user : {},
+  //   };
+  // }
+  // componentDidMount() {
+  //   const that = this;
+  //   fetch("http://localhost:5000/api/v1/user")
+  //     .then((resp) => resp.json())
+  //     .then((data) => {
+  //       that.setState({user: data });
+  //     })
+  //     .catch((err) => {
+  //       console.error(err);
+  //     });
 
-  }
+  // }
     render() {
-      const user = {...this.state.user};
+      const user = {...this.props.user};
        if (!Object.keys(user).length) {
          return <div></div>;
        }
-      {console.log(user)}
         return <div className="wrapper">
         <Header user={user}/>
         <main>

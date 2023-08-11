@@ -1,6 +1,10 @@
 import { Component } from "react";
 
 class Login extends Component {
+  constructor(){
+    super();
+    this.handleSigninClick = this.handleSigninClick.bind(this);
+  }
   handleSigninClick(evnt){
     const formElem = document.getElementById("login-form");
 
@@ -29,6 +33,10 @@ class Login extends Component {
         console.log(data);
         if(data.error){
           document.querySelector("#err").innerHTML = data.error;
+        }else{
+          {
+            this.props.loginUser(data.data);
+          }
         }
         
       })
@@ -71,6 +79,9 @@ class Login extends Component {
         console.log(data);
         if(data.error){
           document.querySelector("#err").innerHTML = data.error;
+        }
+        else {
+          document.querySelector("#err").innerHTML = "Signed Up successful";
         }
         
       })
