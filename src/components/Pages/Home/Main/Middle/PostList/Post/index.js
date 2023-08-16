@@ -25,7 +25,7 @@ class Post extends Component {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username: this.props.post.post_by_username }),
+      body: JSON.stringify({ username: this.props.user.username }),
     })
       .then((resp) => resp.json())
       .then((data) => {
@@ -49,7 +49,7 @@ class Post extends Component {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ username: this.props.post.post_by_username }),
+          body: JSON.stringify({ username: this.props.user.username }),
         }
       )
         .then((resp) => resp.json())

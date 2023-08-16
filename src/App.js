@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import { Component } from 'react';
 import './App.css';
-import Login from './components/Login';
-import Home from './components/Homepage';
+import Home from "./components/Pages/Home";
+import Login from "./components/Pages/Login";
+
 
 class App extends Component {
   constructor(){
