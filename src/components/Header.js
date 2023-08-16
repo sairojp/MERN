@@ -1,7 +1,11 @@
 import { Component } from "react";
 
 class Header extends Component {
-  
+  handleLogout(event) {
+    event.preventDefault();
+    window.sessionStorage.clear();
+    window.location.reload();
+  }
   render(){
     const {user} = this.props;
     return <header>
@@ -213,11 +217,12 @@ class Header extends Component {
                 <a href="./index.html#" title="">Terms &amp; Conditions</a>
               </li>
             </ul>
-            <h3 className="tc"><a href="./sign-in.html" title="">Logout</a></h3>
+            <h3 className="tc"><a href="#" title="" onClick={this.handleLogout}>Logout</a></h3>
           </div>
         </div>
       </div>
     </div>
+
   </header>
   }
 }
