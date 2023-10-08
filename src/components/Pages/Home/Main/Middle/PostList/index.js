@@ -1,35 +1,41 @@
-import { Component } from "react";
+import { useEffect, useState } from "react";
 import Post from "./Post";
+import { POSTS_API } from "../../../../../../config";
 
-class PostList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      posts: [],
-    };
-  }
+const PostList =(props) => {
+  const [posts,setPosts] = useState ([]);
 
-  componentDidMount() {
-    const that = this;
-    fetch("http://localhost:5000/api/v1/posts")
+  useEffect(()=>{
+    fetch(POSTS_API)
       .then((resp) => resp.json())
       .then((data) => {
-        that.setState({ posts: data });
+        setPosts(data );
       })
       .catch((err) => {
         console.error(err);
       });
+  });
+  
+  let filteredPosts = [...posts];
+  if (props.searchKey) {
+    filteredPosts = posts.filter((post) => {
+      if (post.title.toLowerCase().includes(props.searchKey.toLowerCase()) || post.description.toLowerCase().includes(props.searchKey.toLowerCase())) {
+        return true;
+      } else {
+        return false;
+      }
+    });
   }
 
-  render() {
+ 
     return (
       <div className="posts-section">
-        {this.state.posts.map((post, idx) => (
-          <Post post={post} user={this.props.user} key={idx} />
+        {filteredPosts.map((post, idx) => (
+          <Post post={post} user={props.user} key={idx} />
         ))}
       </div>
     );
   }
-}
+
 
 export default PostList;
