@@ -1,13 +1,13 @@
- const SearchBar = () =>{
-  return(
+const SearchBar = (props) => {
+  return (
     <div className="search-bar">
-              <form>
-                <input type="text" name="search" placeholder="Search..." />
-                <button type="submit">
-                  <i className="la la-search"></i>
-                </button>
-              </form>
-            </div>
+      <form>
+        <input type="text" id="searchkey" name="search" placeholder="Search..." onChange={props.handleSearch} />
+        <button type="submit">
+          <i className="la la-search"></i>
+        </button>
+      </form>
+    </div>
   );
- };
- export default SearchBar;
+};
+export default SearchBar;
