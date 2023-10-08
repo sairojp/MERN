@@ -1,26 +1,26 @@
-import { Component } from "react";
 
-class AddPostBtn extends Component {
-  handleShowPostForm() {
+
+const AddPostBtn = (props) => {
+  const handleShowPostForm =() => {
     document.querySelector(".post-popup.job_post").classList.add("active");
     document.querySelector(".wrapper").classList.add("overlay");
     return false;
-  }
+  };
 
-  render() {
+  
     return (
       <div className="post-topbar">
         <div className="user-picy">
-          <img src={"./images/" + this.props.user.username + ".png"} alt="" />
+          <img src={"./images/" + props.user.username + ".png"} alt="" />
         </div>
         <div className="post-st">
           <ul>
             <li>
               <a
                 className="post-jb active"
-                href="#"
+                href="/#"
                 title=""
-                onClick={this.handleShowPostForm}
+                onClick={handleShowPostForm}
               >
                 Post a Job
               </a>
@@ -30,5 +30,5 @@ class AddPostBtn extends Component {
       </div>
     );
   }
-}
+
 export default AddPostBtn;
