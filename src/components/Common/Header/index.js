@@ -12,7 +12,7 @@ const Header =(props)=> {
         <div className="container">
           <div className="header-data">
             <Logo/>
-            <SearchBar/>
+            <SearchBar handleSearch={props.handleSearch}/>
             <Nav/>
             <MenuBtn/>
             <UserAccount user={props.user}/>
