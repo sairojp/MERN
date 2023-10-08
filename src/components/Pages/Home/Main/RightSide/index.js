@@ -164,7 +164,7 @@ const RightSide = () => {
               </span>
             </div>
             <div className="view-more">
-              <a href="./index.html#" title="">
+              <a href="/#" title="">
                 View More
               </a>
             </div>
