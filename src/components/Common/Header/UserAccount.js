@@ -24,7 +24,7 @@ const UserAccount = (props)=>{
       src={"./images/" + props.user.username + ".png"}
       alt=""
     />
-    <a href="./index.html#" title="">
+    <a href="/#" title="">
       {props.user.fullname.substring(0, 4) + ".."}
     </a>
     <i className="la la-sort-down"></i>
@@ -66,23 +66,23 @@ const UserAccount = (props)=>{
         </a>
       </li>
       <li>
-        <a href="./index.html#" title="">
+        <a href="/#" title="">
           Privacy
         </a>
       </li>
       <li>
-        <a href="./index.html#" title="">
+        <a href="/#" title="">
           Faqs
         </a>
       </li>
       <li>
-        <a href="./index.html#" title="">
+        <a href="/#" title="">
           Terms &amp; Conditions
         </a>
       </li>
     </ul>
     <h3 className="tc">
-      <a href=".#" title="" onClick={handleLogout}>
+      <a href="/#" title="" onClick={handleLogout}>
         Logout
       </a>
     </h3>
