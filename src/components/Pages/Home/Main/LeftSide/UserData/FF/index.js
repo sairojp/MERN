@@ -5,8 +5,8 @@ import Following from "./Following";
 const FF = (props)=> {
     return (
       <ul className="user-fw-status">
-        <Follower user={this.props.user} />
-        <Following user={this.props.user} />
+        <Follower user={props.user} />
+        <Following user={props.user} />
         <li>
           <a href="./my-profile.html" title="">
             View Profile
