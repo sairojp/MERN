@@ -1,12 +1,18 @@
-import { Component } from "react";
+import { useState } from "react";
 import Header from "../../Common/Header";
 import ChatBox from "./Chatbox";
 import Main from "./Main";
 
-class Home extends Component {
+const Home = (props) => {
+  const [isSearched, setIsSearched] = useState(false);
+  const [searchKey, setSearchKey] = useState("");
+  const handleSearch = () => {
+    const searchKey = document.getElementById("searchkey").value;
+    setIsSearched(!isSearched);
+    setSearchKey(searchKey);
+  };
  
-  render() {
-    const user = this.props.user;
+    const user = props.user;
     // const user = { ...this.props.user };
     // const { user } = this.props;
     if (!Object.keys(user).length) {
@@ -14,12 +20,12 @@ class Home extends Component {
     }
     return (
       <div className="wrapper">
-        <Header user={user} />
-        <Main user={user} />
+        <Header user={user} handleSearch={handleSearch} />
+      <Main user={user} searchKey={searchKey} />
+
         <ChatBox />
       </div>
-    );
-  }
-}
+    ); 
+};
 
 export default Home;
