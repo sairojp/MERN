@@ -1,27 +1,19 @@
-import { Component } from "react";
+import { useState } from "react";
 
-class CommentSection extends Component {
-  constructor() {
-    super();
-    this.state = {
-      content: "",
-    };
-    this.handleCommentSubmit = this.handleCommentSubmit.bind(this);
-    this.handleCommentType = this.handleCommentType.bind(this);
-    this.handleDeleteComment = this.handleDeleteComment.bind(this);
-  }
+const CommentSection = (props) => {
+  const [content, setContent] = useState("");
+ 
+  const handleCommentType = () => {
+    setContent(content);
+  };
 
-  handleCommentType(event) {
-    this.setState({ content: event.target.value });
-  }
-
-  handleDeleteComment(event) {
+  const handleDeleteComment = (event) => {
     event.preventDefault();
     const commentId = event.currentTarget.dataset.id;
-    this.props.handleDeleteComment(commentId);
-  }
+    props.handleDeleteComment(commentId);
+  };
 
-  handleCommentSubmit(event) {
+  const handleCommentSubmit = (event) => {
     event.preventDefault();
     const formElem = document.getElementById("comment-form");
     const content = formElem.querySelector("#comment-content").value;
@@ -31,12 +23,12 @@ class CommentSection extends Component {
       return;
     }
 
-    this.props.handleCommentSubmit(content);
-    this.setState({ content: "" });
-  }
+    props.handleCommentSubmit(content);
+    setContent(content);
+  };
 
-  render() {
-    const { comments, user } = this.props;
+  
+    const { comments, user } = props;
 
     return (
       <div className="comment-section">
@@ -73,10 +65,10 @@ class CommentSection extends Component {
                     {commented_by_username === user.username && (
                       <div>
                         <a
-                          href=".#"
+                          href="/#"
                           title=""
                           data-id={id}
-                          onClick={this.handleDeleteComment}
+                          onClick={handleDeleteComment}
                         >
                           <i className="fa fa-trash"></i>
                         </a>
@@ -98,13 +90,13 @@ class CommentSection extends Component {
                 type="text"
                 id="comment-content"
                 placeholder="Post a comment"
-                value={this.state.content}
-                onChange={this.handleCommentType}
+                value={content}
+                onChange={handleCommentType}
               />
               <button
                 type="button"
                 style={{ marginLeft: "0px" }}
-                onClick={this.handleCommentSubmit}
+                onClick={handleCommentSubmit}
               >
                 Send
               </button>
@@ -113,7 +105,6 @@ class CommentSection extends Component {
         </div>
       </div>
     );
-  }
-}
+  };
 
 export default CommentSection;
