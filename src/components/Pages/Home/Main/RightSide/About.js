@@ -10,7 +10,7 @@ const About = ()=>{
                 Sign up
               </a>
             </h3> */}
-            <a href="./index.html#" title="">
+            <a href="/#" title="">
               Learn More
             </a>
           </div>
