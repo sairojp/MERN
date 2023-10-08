@@ -9,12 +9,14 @@ const PostList =(props) => {
     fetch(POSTS_API)
       .then((resp) => resp.json())
       .then((data) => {
-        setPosts(data );
+        if (!data.error) {
+         setPosts(data );
+        }
       })
       .catch((err) => {
         console.error(err);
       });
-  });
+  },[]);
   
   let filteredPosts = [...posts];
   if (props.searchKey) {
