@@ -1,3 +1,5 @@
+import { LOGIN_API } from "../../../config";
+
 const SignIn = (props) => {
   const handleSignInClick = (evnt) => {
     const formElem = document.getElementById("login-form");
@@ -14,7 +16,7 @@ const SignIn = (props) => {
     document.querySelector("#err").innerHTML = "";
 
     // call Backend API user create API
-    fetch("http://localhost:5000/api/v1/login", {
+    fetch(LOGIN_API, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
