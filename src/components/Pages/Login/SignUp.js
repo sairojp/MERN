@@ -1,3 +1,5 @@
+import { USER_API } from "../../../config";
+
 const SignUp = ()=>{
 
   const handleSignUpClick= (evnt)=> {
@@ -25,7 +27,7 @@ const SignUp = ()=>{
     document.querySelector("#err").innerHTML = "";
 
     // call Backend API to create user
-    fetch("http://localhost:5000/api/v1/user", {
+    fetch(USER_API, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
