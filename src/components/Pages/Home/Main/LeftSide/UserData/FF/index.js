@@ -1,9 +1,8 @@
-import { Component } from "react";
+
 import Follower from "./Follower";
 import Following from "./Following";
 
-class FF extends Component {
-  render() {
+const FF = (props)=> {
     return (
       <ul className="user-fw-status">
         <Follower user={this.props.user} />
@@ -15,7 +14,7 @@ class FF extends Component {
         </li>
       </ul>
     );
-  }
-}
+  };
+
 
 export default FF;
