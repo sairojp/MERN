@@ -10,7 +10,7 @@ const Main = (props) => {
           <div className="main-section-data">
             <div className="row">
               <LeftSide user={props.user} />
-              <Middle user={props.user} />
+              <Middle user={props.user} searchKey={props.searchKey} />
               <RightSide />
             </div>
           </div>
