@@ -1,22 +1,20 @@
 import { Component } from "react";
+import { POST_API } from "../../../../../../config";
 
-class PostForm extends Component {
-  constructor() {
-    super();
-    this.handleSumitPost = this.handleSumitPost.bind(this);
-  }
+const PostForm = (props) => {
+  
 
-  handleHidePostForm() {
+  const handleHidePostForm = () => {
     document.querySelector(".post-popup.job_post").classList.remove("active");
     document.querySelector(".wrapper").classList.remove("overlay");
     return false;
-  }
+  };
 
-  handleSumitPost() {
+  const handleSumitPost = () => {
     // login user info needed to link with post (to know who create post)
-    const user_id = this.props.user.id;
-    const post_by_username = this.props.user.username;
-    const post_by_fullname = this.props.user.fullname;
+    const user_id = props.user.id;
+    const post_by_username = props.user.username;
+    const post_by_fullname = props.user.fullname;
 
     // select post form
     const formElem = document.getElementById("post-form");
@@ -36,7 +34,7 @@ class PostForm extends Component {
       return;
     }
     // call Backend API to create post record
-    fetch("http://localhost:5000/api/v1/post", {
+    fetch(POST_API, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -64,7 +62,6 @@ class PostForm extends Component {
       });
   }
   
-  render() {
     return (
       <div className="post-popup job_post">
         <div className="post-project">
@@ -130,13 +127,13 @@ class PostForm extends Component {
                         className="active"
                         type="button"
                         value="post"
-                        onClick={this.handleSumitPost}
+                        onClick={handleSumitPost}
                       >
                         Post
                       </button>
                     </li>
                     <li>
-                      <a href="#" title="" onClick={this.handleHidePostForm}>
+                      <a href="#" title="" onClick={handleHidePostForm}>
                         Cancel
                       </a>
                     </li>
@@ -145,13 +142,13 @@ class PostForm extends Component {
               </div>
             </form>
           </div>
-          <a href="#" title="" onClick={this.handleHidePostForm}>
+          <a href="#" title="" onClick={handleHidePostForm}>
             <i className="la la-times-circle-o"></i>
           </a>
         </div>
       </div>
     );
   }
-}
+
 
 export default PostForm;
