@@ -1,5 +1,6 @@
 import { Component } from "react";
 import CommentSection from "./CommentSection";
+import { POST_API } from "../../../../../../../config";
 
 class Post extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class Post extends Component {
 
   handleLikePost(event) {
     event.preventDefault();
-    fetch("http://localhost:5000/api/v1/post/" + this.props.post.id + "/like", {
+    fetch( POST_API +"/" + this.props.post.id + "/like", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +44,7 @@ class Post extends Component {
     this.setState({ showPost: !this.state.showPost });
     if (!this.state.showPost) {
       fetch(
-        "http://localhost:5000/api/v1/post/" + this.props.post.id + "/view",
+        POST_API +"/" + this.props.post.id + "/view",
         {
           method: "POST",
           headers: {
@@ -71,7 +72,7 @@ class Post extends Component {
 
   handleCommentSubmit(content) {
     fetch(
-      "http://localhost:5000/api/v1/post/" + this.props.post.id + "/comment",
+       POST_API + "/" + this.props.post.id + "/comment",
       {
         method: "POST",
         headers: {
@@ -99,7 +100,7 @@ class Post extends Component {
 
   handleDeleteComment(commentId) {
     fetch(
-      "http://localhost:5000/api/v1/post/" +
+      POST_API + "/" +
         this.props.post.id +
         "/comment/" +
         commentId,
