@@ -13,32 +13,32 @@ const Links = () => {
           </a>
         </li>
         <li>
-          <a href="./index.html#" title="">
+          <a href="/#" title="">
             Privacy Policy
           </a>
         </li>
         <li>
-          <a href="./index.html#" title="">
+          <a href="/#" title="">
             Community Guidelines
           </a>
         </li>
         <li>
-          <a href="./index.html#" title="">
+          <a href="/#" title="">
             Cookies Policy
           </a>
         </li>
         <li>
-          <a href="./index.html#" title="">
+          <a href="/#" title="">
             Career
           </a>
         </li>
         <li>
-          <a href="./index.html#" title="">
+          <a href="/#" title="">
             Language
           </a>
         </li>
         <li>
-          <a href="./index.html#" title="">
+          <a href="/#" title="">
             Copyright Policy
           </a>
         </li>
