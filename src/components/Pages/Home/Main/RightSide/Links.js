@@ -44,7 +44,7 @@ const Links = () => {
         </li>
       </ul>
       <div className="cp-sec">
-        <img src="./images/lec-full.png" alt="" />
+        <img src="./images/logo.png" alt="" />
         <p>
           <img src="./images/cp.png" alt="" />
           Copyright 2019

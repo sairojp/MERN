@@ -3,7 +3,7 @@ const CompanyInfo = ()=>{
   <div className="cmp-info">
                   <div className="cm-logo">
                     <img
-                      src="images/lec.png"
+                      src="images/logo.png"
                       alt=""
                       style={{ width: "100px" }}
                     />
@@ -13,7 +13,7 @@ const CompanyInfo = ()=>{
                       connect and collaborate remotely
                     </p>
                   </div>
-                  <img src="images/lec-full.png" alt="" />
+                  <img src="images/logo.png" alt="" />
                 </div>
   );  
 }

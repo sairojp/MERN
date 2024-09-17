@@ -1,3 +1,16 @@
+# AspirantNet
+It is a simple social media app for searching jobs and making connection. 
+It is implemented in MERN stack.
+
+This repository consists of the react app for the social media. 
+The express app for the backend of the app can be found in : https://github.com/sairojp/MERN-BE
+
+
+
+<img width="941" alt="You-tify" src="Home.png">
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
