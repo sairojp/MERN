@@ -7,7 +7,7 @@ The express app for the backend of the app can be found in : https://github.com/
 
 
 
-<img width="941" alt="You-tify" src="Home.png">
+<img width="941" alt="AspirantNet" src="Home.png">
 
 
 
